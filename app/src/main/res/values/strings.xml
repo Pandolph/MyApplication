@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">健身党</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="notes">专为健身打造</string>
+    <string name="notestart">开始了</string>
+    <string name="notemusic">放音乐了</string>
+    <string name="notepause">暂停了</string>
+    <string name="kidding">居然被发现了这个小页面！！！</string>
+
+</resources>
