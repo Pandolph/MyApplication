@@ -2,11 +2,16 @@ package com.example.linpan1.myapplication;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVInstallation;
+import com.avos.avoscloud.SaveCallback;
 
 
 public class MainActivity extends Activity {
@@ -52,6 +57,18 @@ public class MainActivity extends Activity {
 
         });
 
+
+        AVInstallation.getCurrentInstallation().saveInBackground(new SaveCallback() {
+            @Override
+            public void done(AVException e) {
+                if(e==null){
+                    String installationId=AVInstallation.getCurrentInstallation().getInstallationId();
+                }
+                else {
+                    Log.i("id","保存失败" );
+                }
+            }
+        });
 
     }
 
