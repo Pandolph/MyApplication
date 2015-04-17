@@ -12,6 +12,21 @@ import android.widget.TextView;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVInstallation;
 import com.avos.avoscloud.SaveCallback;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Window;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.avos.avoscloud.*;
+
+import java.io.Closeable;
+import java.io.File;
+import java.io.RandomAccessFile;
 
 
 public class MainActivity extends Activity {
@@ -33,6 +48,14 @@ public class MainActivity extends Activity {
             public void onClick(View v){
              note.setText(R.string.notestart);
                 note.setTextColor(R.drawable.green);
+                AVObject gameScore = new AVObject("GameScore");
+                Log.i("try","new");
+                gameScore.put("score", 1200);
+                gameScore.put("playerName", "steve");
+                gameScore.put("level", 10);
+
+                    gameScore.saveInBackground();
+
 
 
             }
